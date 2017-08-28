@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script src="autobahn-0.8.2.min.js"></script>
+        <script>
+            console.log('connect...');
+
+            ab.connect(
+                'ws://0.0.0.0:8482',
+                function (session) {
+                    console.log('connected.');
+                    console.log('subscribing topics...');
+
+                    session.subscribe('race', function (topic, event) {
+                        console.log('race event received', topic, event);
+                    });
+
+                    session.subscribe('player-error', function (topic, event) {
+                        console.log('player-error event received', topic, event);
+                    });
+                },
+                function (code, reason, detail) {
+                    console.warn(code, reason, detail);
+                });
+        </script>
+    </body>
+</html>

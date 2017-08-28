@@ -1,0 +1,16 @@
+#!/usr/bin/php
+<?php
+
+$loader = require_once __DIR__.'/../vendor/autoload.php';
+
+\Doctrine\Common\Annotations\AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
+
+$app = new Application(array(
+    'project.root' => dirname(__DIR__),
+    'env' => 'dev',
+    'debug' => true,
+));
+
+$console = new Console($app);
+
+$console->run();

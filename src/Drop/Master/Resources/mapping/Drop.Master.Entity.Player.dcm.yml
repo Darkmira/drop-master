@@ -1,0 +1,18 @@
+Drop\Master\Entity\Player:
+    type: entity
+    repositoryClass: Drop\Master\Repository\PlayerRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        pseudo:
+            type: string
+        vote:
+            type: string
+            nullable: true
+    manyToOne:
+        team:
+            targetEntity: Drop\Master\Entity\Team
+            inversedBy: players
