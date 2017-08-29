@@ -12,6 +12,9 @@ Requires git, Docker, docker-compose.
 git clone git@github.com:Darkmira/drop-master.git
 cd drop-master/
 
+# Create your .env from distribution and edit it
+cp .env.dist .env
+
 make
 ```
 
@@ -40,6 +43,27 @@ Docker runs the whole environment, the RestApi, the websocket server and PHPMyAd
 You can use Postman to send predefined requests to the api.
 
 Import this Postman collection: [postman.json](postman.json).
+
+
+### Commands
+
+Go to php container (if using Docker):
+
+``` bash
+make bash
+```
+
+Process votes and send them to Fleet control API:
+
+``` bash
+bin/console drop:votes:process
+```
+
+Do the same thing, but every 15 seconds:
+
+``` bash
+bin/console drop:votes:schedule 15
+```
 
 
 ## License
