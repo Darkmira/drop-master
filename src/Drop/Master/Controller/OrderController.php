@@ -42,6 +42,10 @@ class OrderController
      */
     public function postOrders(Request $request) : ApiResponse
     {
+        if ($request->query->get('api_key') !== $this->container['app.constant.api_key']) {
+            return new ApiResponse(['api_key is invalid.'], Response::HTTP_UNAUTHORIZED);
+        }
+
         $orders = $this
             ->container['serializer']
             ->deserialize($request->getContent(), 'array<Drop\Master\Entity\Order>', 'json')
@@ -51,10 +55,8 @@ class OrderController
 
         $this->container['orm.em']->flush();
 
-        $race = $this->container['app.race_state']->getRaceState();
+        $this->container['app.race_state']->dispatchRaceState();
 
-        $this->container['dispatcher']->dispatch(RaceEvent::RACE_CHANGED, new RaceEvent($race));
-
-        return new ApiResponse(null, Response::HTTP_OK);
+        return new ApiResponse('', Response::HTTP_NO_CONTENT);
     }
 }

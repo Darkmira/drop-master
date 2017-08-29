@@ -6,6 +6,7 @@ use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Application as ConsoleApplication;
 use Application as SilexApplication;
+use Drop\Master\Command as DropCommand;
 
 class Console extends ConsoleApplication
 {
@@ -27,6 +28,7 @@ class Console extends ConsoleApplication
         $this->silexApplication->boot();
 
         $this->registerDoctrineCommands();
+        $this->registerDropCommands();
     }
 
     private function registerDoctrineCommands()
@@ -41,5 +43,16 @@ class Console extends ConsoleApplication
 
         $this->setHelperSet($helperSet);
         ConsoleRunner::addCommands($this);
+    }
+
+    private function registerDropCommands()
+    {
+        $innocentHand = $this->silexApplication['app.innocent_hand'];
+        $voteSession = $this->silexApplication['app.vote_session_handler'];
+
+        $this->addCommands([
+            new DropCommand\VotesProcessCommand($innocentHand),
+            new DropCommand\VotesScheduleCommand($innocentHand, $voteSession),
+        ]);
     }
 }

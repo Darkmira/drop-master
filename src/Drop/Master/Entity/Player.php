@@ -73,6 +73,14 @@ class Player
     }
 
     /**
+     * @return bool
+     */
+    public function hasVote() : bool
+    {
+        return null !== $this->vote;
+    }
+
+    /**
      * @param string $vote
      *
      * @return self

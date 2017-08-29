@@ -26,6 +26,31 @@ class MasterProvider implements ServiceProviderInterface
             return $mappings;
         });
 
+        $app['app.constant.api_key'] = getenv('API_KEY');
+        $app['app.constant.fleet_control_api'] = getenv('FLEET_CONTROL_API');
+
+        $app['app.fleet_control_api'] = function (Container $app) {
+            return new \GuzzleHttp\Client([
+                'base_uri' => $app['app.constant.fleet_control_api'],
+            ]);
+        };
+
+        $app['app.vote_session_handler'] = function (Container $app) {
+            return new Service\VoteSessionHandler(
+                $app['orm.em']->getRepository('Drop\\Master\\Entity\\VoteSession')
+            );
+        };
+
+        $app['app.innocent_hand'] = function (Container $app) {
+            return new Service\InnocentHand(
+                $app['orm.em']->getRepository('Drop\\Master\\Entity\\Team'),
+                $app['orm.em']->getRepository('Drop\\Master\\Entity\\Player'),
+                $app['app.race_state'],
+                $app['app.player_error_dispatcher'],
+                $app['app.fleet_control_api']
+            );
+        };
+
         $app['app.orders_processor'] = function (Container $app) {
             return new Service\OrderProcessor(
                 $app['orm.em']->getRepository('Drop\\Master\\Entity\\Team'),
@@ -37,7 +62,9 @@ class MasterProvider implements ServiceProviderInterface
         $app['app.race_state'] = function (Container $app) {
             return new Service\RaceState(
                 $app['orm.em']->getRepository('Drop\\Master\\Entity\\Team'),
-                $app['orm.em']->getRepository('Drop\\Master\\Entity\\Player')
+                $app['orm.em']->getRepository('Drop\\Master\\Entity\\Player'),
+                $app['dispatcher'],
+                $app['app.vote_session_handler']
             );
         };
 

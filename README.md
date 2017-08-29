@@ -35,6 +35,13 @@ Docker runs the whole environment, the RestApi, the websocket server and PHPMyAd
  - `ws://0.0.0.0:8482` Websocket server.
 
 
+### Postman collection
+
+You can use Postman to send predefined requests to the api.
+
+Import this Postman collection: [postman.json](postman.json).
+
+
 ## License
 
 This project is under [AGPL-v3 license](LICENSE).

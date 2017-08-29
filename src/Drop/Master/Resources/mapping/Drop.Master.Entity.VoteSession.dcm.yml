@@ -1,0 +1,15 @@
+Drop\Master\Entity\VoteSession:
+    type: entity
+    repositoryClass: Drop\Master\Repository\VoteSessionRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        sessionStart:
+            type: datetime
+        sessionEnd:
+            type: datetime
+        sessionDuration:
+            type: integer

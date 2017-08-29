@@ -1,0 +1,11 @@
+Drop\Master\Entity\VoteSession:
+    exclusion_policy: NONE
+    properties:
+        id:
+            type: integer
+        sessionStart:
+            type: DateTime
+        sessionEnd:
+            type: DateTime
+        sessionDuration:
+            type: integer

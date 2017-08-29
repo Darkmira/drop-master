@@ -62,7 +62,7 @@ class Team
     /**
      * @return Player[]
      */
-    public function getPlayers(): array
+    public function getPlayers()
     {
         return $this->players;
     }

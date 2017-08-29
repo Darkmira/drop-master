@@ -31,12 +31,33 @@ class PlayerRepository extends EntityRepository
     /**
      * @return Player[]
      */
-    public function findPlayersWithoutTeam() : array
+    public function findPlayersWithoutTeam($onlyVoters = false) : array
     {
-        return $this->createQueryBuilder('p')
+        $queryBuilder = $this->createQueryBuilder('p')
             ->where('p.team is null')
+        ;
+
+        if ($onlyVoters) {
+            $queryBuilder->andWhere('p.vote is not null');
+        }
+
+        return $queryBuilder
             ->getQuery()
             ->getResult()
+        ;
+    }
+
+    /**
+     * Set all player votes to null.
+     */
+    public function resetVotes() : void
+    {
+        $this->createQueryBuilder('p')
+            ->update()
+            ->set('p.vote', ':reseted')
+            ->setParameter(':reseted', null)
+            ->getQuery()
+            ->execute()
         ;
     }
 }
