@@ -1,8 +1,6 @@
 <?php
 
-$loader = require_once '../vendor/autoload.php';
-
-\Doctrine\Common\Annotations\AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
+require_once '../vendor/autoload.php';
 
 $app = new RestApiApplication([
     'project.root' => dirname(__DIR__),
