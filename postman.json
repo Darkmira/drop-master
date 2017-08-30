@@ -61,7 +61,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n  {\"pseudo\":\"traitre\", \"team\": \"black\"},\n  {\"pseudo\":\"traitre\", \"team\": \"black\"}\n]"
+					"raw": "[\n  {\"pseudo\":\"theTraitor\", \"team\": \"black\"},\n  {\"pseudo\":\"theTraitor\", \"team\": \"green\"}\n]"
 				},
 				"description": ""
 			},

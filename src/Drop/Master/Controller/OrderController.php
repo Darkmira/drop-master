@@ -7,9 +7,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use DDesrosiers\SilexAnnotations\Annotations as SLX;
 use Alcalyn\SerializableApiResponse\ApiResponse;
-use Drop\Master\Entity\Player;
-use Drop\Master\Entity\Team;
-use Drop\Master\Event\RaceEvent;
 
 /**
  * @SLX\Controller(prefix="/api")

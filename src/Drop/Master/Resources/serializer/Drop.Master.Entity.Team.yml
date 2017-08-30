@@ -5,5 +5,5 @@ Drop\Master\Entity\Team:
             type: integer
         name:
             type: string
-        player:
+        players:
             type: array<Drop\Master\Entity\Player>

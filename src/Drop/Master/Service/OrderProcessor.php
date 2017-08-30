@@ -5,7 +5,6 @@ namespace Drop\Master\Service;
 use Drop\Master\Entity\Order;
 use Drop\Master\Repository\TeamRepository;
 use Drop\Master\Repository\PlayerRepository;
-use Drop\Master\Event\PlayerErrorEvent;
 
 class OrderProcessor
 {
@@ -48,7 +47,13 @@ class OrderProcessor
 
         if ($order->isTeam()) {
             if ($player->hasTeam()) {
-                $this->playerErrorDispatcher->dispatch($player, 'player_error.traitor');
+                if ($order->getTeam() === $player->getTeam()->getName()) {
+                    $error = 'player_error.already_in_team';
+                } else {
+                    $error = 'player_error.traitor';
+                }
+
+                $this->playerErrorDispatcher->dispatch($player, $error);
                 return;
             }
 
