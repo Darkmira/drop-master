@@ -3,8 +3,6 @@ Drop\Master\Entity\Order:
     properties:
         pseudo:
             type: string
-        type:
-            type: string
         team:
             type: string
         move:

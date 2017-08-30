@@ -10,7 +10,6 @@
         "alcalyn/serializable-api-response": "~1.0",
         "doctrine/cache": "1.x",
         "ddesrosiers/silex-annotation-provider": "2.x",
-        "symfony/yaml": "2.x",
         "dflydev/doctrine-orm-service-provider": "2.x",
         "guzzlehttp/guzzle": "^6.3"
     },

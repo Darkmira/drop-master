@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n  {\"pseudo\":\"robert\", \"type\":\"team\", \"team\": \"green\"},\n  {\"pseudo\":\"robert\", \"type\":\"move\", \"move\": \"left\"},\n  {\"pseudo\":\"gertrude\", \"type\":\"team\", \"team\": \"green\"},\n  {\"pseudo\":\"gertrude\", \"type\":\"move\", \"move\": \"right\"},\n  {\"pseudo\":\"gontrand\", \"type\":\"team\", \"team\": \"green\"},\n  {\"pseudo\":\"gontrand\", \"type\":\"move\", \"move\": \"forward\"},\n  {\"pseudo\":\"bernard\", \"type\":\"team\", \"team\": \"green\"},\n  {\"pseudo\":\"bernard\", \"type\":\"move\", \"move\": \"left\"},\n  \n  {\"pseudo\":\"parfait\", \"type\":\"team\", \"team\": \"black\"},\n  {\"pseudo\":\"parfait\", \"type\":\"move\", \"move\": \"left\"},\n  {\"pseudo\":\"exaucee\", \"type\":\"team\", \"team\": \"black\"},\n  {\"pseudo\":\"exaucee\", \"type\":\"move\", \"move\": \"right\"},\n  {\"pseudo\":\"bebere\", \"type\":\"team\", \"team\": \"black\"},\n  {\"pseudo\":\"bebere\", \"type\":\"move\", \"move\": \"left\"},\n  \n  {\"pseudo\":\"astrude\", \"type\":\"team\", \"team\": \"black\"},\n  {\"pseudo\":\"machin\", \"type\":\"team\", \"team\": \"black\"},\n  {\"pseudo\":\"chose\", \"type\":\"team\", \"team\": \"green\"},\n  \n  {\"pseudo\":\"bidule\", \"type\":\"move\", \"move\": \"left\"},\n  {\"pseudo\":\"truc\", \"type\":\"move\", \"move\": \"forward\"}\n]"
+					"raw": "[\n  {\"pseudo\":\"robert\", \"team\": \"green\"},\n  {\"pseudo\":\"robert\", \"move\": \"left\"},\n  {\"pseudo\":\"gertrude\", \"team\": \"green\"},\n  {\"pseudo\":\"gertrude\", \"move\": \"right\"},\n  {\"pseudo\":\"gontrand\", \"team\": \"green\"},\n  {\"pseudo\":\"gontrand\", \"move\": \"forward\"},\n  {\"pseudo\":\"bernard\", \"team\": \"green\"},\n  {\"pseudo\":\"bernard\", \"move\": \"left\"},\n  \n  {\"pseudo\":\"parfait\", \"team\": \"black\"},\n  {\"pseudo\":\"parfait\", \"move\": \"left\"},\n  {\"pseudo\":\"exaucee\", \"team\": \"black\"},\n  {\"pseudo\":\"exaucee\", \"move\": \"right\"},\n  {\"pseudo\":\"bebere\", \"team\": \"black\"},\n  {\"pseudo\":\"bebere\", \"move\": \"left\"},\n  \n  {\"pseudo\":\"astrude\", \"team\": \"black\"},\n  {\"pseudo\":\"machin\", \"team\": \"black\"},\n  {\"pseudo\":\"chose\", \"team\": \"green\"},\n  \n  {\"pseudo\":\"bidule\", \"move\": \"left\"},\n  {\"pseudo\":\"truc\", \"move\": \"forward\"}\n]"
 				},
 				"description": ""
 			},
@@ -61,7 +61,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n  {\"pseudo\":\"traitre\", \"type\":\"team\", \"team\": \"black\"},\n  {\"pseudo\":\"traitre\", \"type\":\"team\", \"team\": \"black\"}\n]"
+					"raw": "[\n  {\"pseudo\":\"traitre\", \"team\": \"black\"},\n  {\"pseudo\":\"traitre\", \"team\": \"black\"}\n]"
 				},
 				"description": ""
 			},

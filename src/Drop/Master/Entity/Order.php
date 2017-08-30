@@ -22,11 +22,6 @@ class Order
     /**
      * @var string
      */
-    private $type;
-
-    /**
-     * @var string
-     */
     private $team;
 
     /**
@@ -59,19 +54,7 @@ class Order
      */
     public function getType() : string
     {
-        return $this->type;
-    }
-
-    /**
-     * @param string $type
-     *
-     * @return self
-     */
-    public function setType(string $type) : self
-    {
-        $this->type = $type;
-
-        return $this;
+        return null === $this->team ? self::MOVE : self::TEAM;
     }
 
     /**
@@ -79,7 +62,7 @@ class Order
      */
     public function isTeam() : bool
     {
-        return self::TEAM === $this->type;
+        return self::TEAM === $this->getType();
     }
 
     /**
@@ -107,7 +90,7 @@ class Order
      */
     public function isMove() : bool
     {
-        return self::MOVE === $this->type;
+        return self::MOVE === $this->getType();
     }
 
     /**

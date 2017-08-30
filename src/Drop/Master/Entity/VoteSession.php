@@ -81,11 +81,11 @@ class VoteSession
     }
 
     /**
-     * @param type $sessionDuration
+     * @param int $sessionDuration
      *
      * @return self
      */
-    public function setSessionDuration($sessionDuration) : self
+    public function setSessionDuration(int $sessionDuration) : self
     {
         $this->sessionDuration = $sessionDuration;
 
