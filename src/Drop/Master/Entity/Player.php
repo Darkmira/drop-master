@@ -67,7 +67,7 @@ class Player
     /**
      * @return string
      */
-    public function getVote() : ?string
+    public function getVote()
     {
         return $this->vote;
     }
@@ -85,7 +85,7 @@ class Player
      *
      * @return self
      */
-    public function setVote(?string $vote) : self
+    public function setVote(string $vote) : self
     {
         $this->vote = $vote;
 

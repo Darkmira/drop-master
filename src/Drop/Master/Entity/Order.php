@@ -68,7 +68,7 @@ class Order
     /**
      * @return string
      */
-    public function getTeam() : ?string
+    public function getTeam()
     {
         return $this->team;
     }
@@ -78,7 +78,7 @@ class Order
      *
      * @return self
      */
-    public function setTeam(?string $team) : self
+    public function setTeam(string $team)
     {
         $this->team = $team;
 
@@ -96,7 +96,7 @@ class Order
     /**
      * @return string
      */
-    public function getMove() : ?string
+    public function getMove()
     {
         return $this->move;
     }
@@ -106,7 +106,7 @@ class Order
      *
      * @return self
      */
-    public function setMove(?string $move) : self
+    public function setMove(string $move) : self
     {
         $this->move = $move;
 

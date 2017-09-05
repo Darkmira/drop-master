@@ -10,7 +10,7 @@ class MasterProvider implements ServiceProviderInterface
     /**
      * {@InheritDoc}
      */
-    public function register(Container $app) : void
+    public function register(Container $app)
     {
         $app['serializer.builder']
             ->addMetadataDir($app['project.root'].'/src/Drop/Master/Resources/serializer')

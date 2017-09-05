@@ -50,7 +50,7 @@ class PlayerRepository extends EntityRepository
     /**
      * Set all player votes to null.
      */
-    public function resetVotes() : void
+    public function resetVotes()
     {
         $this->createQueryBuilder('p')
             ->update()

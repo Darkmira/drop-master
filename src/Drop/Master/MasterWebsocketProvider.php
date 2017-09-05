@@ -10,7 +10,7 @@ class MasterWebsocketProvider implements ServiceProviderInterface
     /**
      * {@InheritDoc}
      */
-    public function register(Container $app) : void
+    public function register(Container $app)
     {
         $app->topic('race', function ($topicPattern) {
             return new Topic\RaceTopic($topicPattern);

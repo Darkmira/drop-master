@@ -41,7 +41,7 @@ class OrderProcessor
     /**
      * @param Order $order
      */
-    public function processOrder(Order $order) : void
+    public function processOrder(Order $order)
     {
         $player = $this->playerRepository->findOrCreate($order->getPseudo());
 
@@ -74,7 +74,7 @@ class OrderProcessor
     /**
      * @param Order[] $orders
      */
-    public function processOrders(array $orders) : void
+    public function processOrders(array $orders)
     {
         foreach ($orders as $order) {
             $this->processOrder($order);

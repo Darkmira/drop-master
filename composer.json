@@ -4,7 +4,7 @@
     "license": "AGPL-v3",
     "type": "project",
     "require": {
-        "php": ">=7.1.0",
+        "php": ">=7.0.0",
         "eole/sandstone": "^1.2.3",
         "jdesrosiers/silex-cors-provider": "^1.4.0",
         "alcalyn/serializable-api-response": "~1.0",
