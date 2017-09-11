@@ -1,0 +1,25 @@
+{
+    "name": "darkmira/drop-master",
+    "description": "The arbiter has to count user orders, and send to robots the more wanted action.",
+    "license": "AGPL-v3",
+    "type": "project",
+    "require": {
+        "php": ">=7.0.0",
+        "eole/sandstone": "^1.2.3",
+        "jdesrosiers/silex-cors-provider": "^1.4.0",
+        "alcalyn/serializable-api-response": "~1.0",
+        "doctrine/cache": "1.x",
+        "ddesrosiers/silex-annotation-provider": "2.x",
+        "dflydev/doctrine-orm-service-provider": "2.x",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "silex/web-profiler": "2.x",
+        "sorien/silex-dbal-profiler": "2.x"
+    },
+    "autoload": {
+        "psr-4": {
+            "": ["src/", "app/"]
+        }
+    }
+}

@@ -1,0 +1,9 @@
+Drop\Master\Entity\Order:
+    exclusion_policy: NONE
+    properties:
+        pseudo:
+            type: string
+        team:
+            type: string
+        move:
+            type: string

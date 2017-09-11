@@ -1,0 +1,7 @@
+Drop\Master\Event\PlayerErrorEvent:
+    exclusion_policy: NONE
+    properties:
+        player:
+            type: Drop\Master\Entity\Player
+        message:
+            type: string

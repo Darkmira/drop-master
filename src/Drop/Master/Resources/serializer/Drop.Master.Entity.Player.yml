@@ -1,0 +1,11 @@
+Drop\Master\Entity\Player:
+    exclusion_policy: NONE
+    properties:
+        id:
+            type: integer
+        pseudo:
+            type: string
+        vote:
+            type: string
+        team:
+            type: Drop\Master\Entity\Team

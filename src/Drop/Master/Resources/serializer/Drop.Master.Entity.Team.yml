@@ -1,0 +1,9 @@
+Drop\Master\Entity\Team:
+    exclusion_policy: NONE
+    properties:
+        id:
+            type: integer
+        name:
+            type: string
+        players:
+            type: array<Drop\Master\Entity\Player>

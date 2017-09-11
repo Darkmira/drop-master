@@ -1,0 +1,71 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Drop Master",
+		"_postman_id": "04e936c7-9db3-a54e-a5b1-09e8f8f71950",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post many orders",
+			"request": {
+				"url": "http://0.0.0.0:8480/index-dev.php/api/orders?api_key=ChangeMeImFamous",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\"pseudo\":\"robert\", \"team\": \"green\"},\n  {\"pseudo\":\"robert\", \"move\": \"left\"},\n  {\"pseudo\":\"gertrude\", \"team\": \"green\"},\n  {\"pseudo\":\"gertrude\", \"move\": \"right\"},\n  {\"pseudo\":\"gontrand\", \"team\": \"green\"},\n  {\"pseudo\":\"gontrand\", \"move\": \"forward\"},\n  {\"pseudo\":\"bernard\", \"team\": \"green\"},\n  {\"pseudo\":\"bernard\", \"move\": \"left\"},\n  \n  {\"pseudo\":\"parfait\", \"team\": \"black\"},\n  {\"pseudo\":\"parfait\", \"move\": \"left\"},\n  {\"pseudo\":\"exaucee\", \"team\": \"black\"},\n  {\"pseudo\":\"exaucee\", \"move\": \"right\"},\n  {\"pseudo\":\"bebere\", \"team\": \"black\"},\n  {\"pseudo\":\"bebere\", \"move\": \"left\"},\n  \n  {\"pseudo\":\"astrude\", \"team\": \"black\"},\n  {\"pseudo\":\"machin\", \"team\": \"black\"},\n  {\"pseudo\":\"chose\", \"team\": \"green\"},\n  \n  {\"pseudo\":\"bidule\", \"move\": \"left\"},\n  {\"pseudo\":\"truc\", \"move\": \"forward\"}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get race state",
+			"request": {
+				"url": "http://0.0.0.0:8480/index-dev.php/api/race",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\"pseudo\":\"robert\", \"type\":\"team\", \"team\": \"green\"},\n  {\"pseudo\":\"robert\", \"type\":\"move\", \"move\": \"left\"},\n  {\"pseudo\":\"gertrude\", \"type\":\"team\", \"team\": \"green\"},\n  {\"pseudo\":\"gertrude\", \"type\":\"move\", \"team\": \"right\"},\n  {\"pseudo\":\"gontrand\", \"type\":\"team\", \"team\": \"green\"},\n  {\"pseudo\":\"gontrand\", \"type\":\"move\", \"team\": \"forward\"},\n  {\"pseudo\":\"bernard\", \"type\":\"team\", \"team\": \"green\"},\n  {\"pseudo\":\"bernard\", \"type\":\"move\", \"team\": \"left\"},\n  \n  {\"pseudo\":\"parfait\", \"type\":\"team\", \"team\": \"black\"},\n  {\"pseudo\":\"parfait\", \"type\":\"move\", \"team\": \"left\"},\n  {\"pseudo\":\"exaucee\", \"type\":\"team\", \"team\": \"black\"},\n  {\"pseudo\":\"exaucee\", \"type\":\"move\", \"team\": \"right\"},\n  {\"pseudo\":\"bebere\", \"type\":\"team\", \"team\": \"black\"},\n  {\"pseudo\":\"bebere\", \"type\":\"move\", \"team\": \"left\"},\n  \n  {\"pseudo\":\"astrude\", \"type\":\"team\", \"team\": \"black\"},\n  {\"pseudo\":\"machin\", \"type\":\"team\", \"team\": \"black\"},\n  {\"pseudo\":\"chose\", \"type\":\"team\", \"team\": \"green\"},\n  \n  {\"pseudo\":\"bidule\", \"type\":\"vote\", \"team\": \"left\"},\n  {\"pseudo\":\"truc\", \"type\":\"vote\", \"team\": \"forward\"}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Trying to change team",
+			"request": {
+				"url": "http://0.0.0.0:8480/index-dev.php/api/orders?api_key=ChangeMeImFamous",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\"pseudo\":\"theTraitor\", \"team\": \"black\"},\n  {\"pseudo\":\"theTraitor\", \"team\": \"green\"}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

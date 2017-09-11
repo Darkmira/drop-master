@@ -1,0 +1,15 @@
+Drop\Master\Entity\Team:
+    type: entity
+    repositoryClass: Drop\Master\Repository\TeamRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+    oneToMany:
+        players:
+            targetEntity: Drop\Master\Entity\Player
+            mappedBy: team

@@ -1,0 +1,5 @@
+Drop\Master\Event\RaceEvent:
+    exclusion_policy: NONE
+    properties:
+        race:
+            type: array

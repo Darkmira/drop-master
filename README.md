@@ -12,6 +12,9 @@ Requires git, Docker, docker-compose.
 git clone git@github.com:Darkmira/drop-master.git
 cd drop-master/
 
+# Create your .env from distribution and edit it
+cp .env.dist .env
+
 make
 ```
 
@@ -28,11 +31,39 @@ Run all with Docker with command `make`.
 
 Docker runs the whole environment, the RestApi, the websocket server and PHPMyAdmin. You now have access to:
 
- - http://0.0.0.0:8480/index-dev.php/api/ Rest Api (dev mode)
- - http://0.0.0.0:8480/api/ Rest Api (prod mode)
+ - http://0.0.0.0:8480/index-dev.php/api/race Rest Api (dev mode)
+ - http://0.0.0.0:8480/api/race Rest Api (prod mode)
  - http://0.0.0.0:8480/index-dev.php/_profiler/ Symfony web profiler (only dev mode).
  - http://0.0.0.0:8481 PHPMyAdmin (login: `root` / `root`).
  - `ws://0.0.0.0:8482` Websocket server.
+
+
+### Postman collection
+
+You can use Postman to send predefined requests to the api.
+
+Import this Postman collection: [postman.json](postman.json).
+
+
+### Commands
+
+Go to php container (if using Docker):
+
+``` bash
+make bash
+```
+
+Process votes and send them to Fleet control API:
+
+``` bash
+bin/console drop:votes:process
+```
+
+Do the same thing, but every 15 seconds:
+
+``` bash
+bin/console drop:votes:schedule 15
+```
 
 
 ## License
